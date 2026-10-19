@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prof. Tiago Moreira | Física & Preparação para Vestibulares</title>
+    
+    <!-- ==================================================================== -->
+    <!-- GOOGLE TAG MANAGER (HEAD SNIPPET)                                   -->
+    <!-- Cole o script oficial do GTM no espaço reservado abaixo:             -->
+    <!-- ==================================================================== -->
+    <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
+    <!-- ==================================================================== -->
+
+    <!-- Fontes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==================================================================
+           DESIGN SYSTEM - LUFA-LUFA (HUFFLEPUFF) & BASE CSS
+           ================================================================== */
+        :root {
+            --hufflepuff-gold: #EDB82D;
+            --hufflepuff-yellow-dark: #E3A008;
+            --hufflepuff-black: #1F1F1F;
+            --hufflepuff-charcoal: #2A2A2A;
+            --hufflepuff-brown: #5C4033;
+            --bg-light: #FBF9F3;
+            --text-dark: #2D2D2D;
+            --text-muted: #666666;
+            --white: #FFFFFF;
+            --border-color: #E5E0D8;
+            --font-heading: 'Cinzel', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --transition-smooth: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            color: var(--hufflepuff-black);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* BANNER TOPO / BRANDING */
+        .house-stripe {
+            height: 6px;
+            background: linear-gradient(90deg, var(--hufflepuff-black) 0%, var(--hufflepuff-gold) 50%, var(--hufflepuff-black) 100%);
+        }
+
+        /* HEADER */
+        header {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .badger-svg {
+            width: 42px;
+            height: 42px;
+        }
+
+        .brand-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--hufflepuff-black);
+        }
+
+        .brand-title span {
+            color: var(--hufflepuff-yellow-dark);
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            display: block;
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--hufflepuff-charcoal);
+            transition: var(--transition-smooth);
+        }
+
+        nav a:hover {
+            color: var(--hufflepuff-yellow-dark);
+        }
+
+        .btn-primary {
+            background-color: var(--hufflepuff-gold);
+            color: var(--hufflepuff-black);
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            display: inline-block;
+            border: 2px solid var(--hufflepuff-yellow-dark);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-align: center;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--hufflepuff-yellow-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(227, 160, 8, 0.3);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #FFFDF8 0%, #F5EEDC 100%);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: rgba(237, 184, 45, 0.2);
+            border: 1px solid var(--hufflepuff-gold);
+            color: var(--hufflepuff-black);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+
+        .hero-badge-box {
+            background-color: var(--white);
+            border: 2px solid var(--hufflepuff-gold);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            position: relative;
+        }
+
+        .hero-badge-box::before {
+            content: "LEAL & DEDICADO";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--hufflepuff-black);
+            color: var(--hufflepuff-gold);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 2px 12px;
+            border-radius: 10px;
+            letter-spacing: 1px;
+        }
+
+        /* SEÇÃO SOBRE */
+        .sobre {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .qualificacoes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .card-qualificacao {
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--hufflepuff-gold);
+            padding: 24px;
+            border-radius: 8px;
+            transition: var(--transition-smooth);
+        }
+
+        .card-qualificacao:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+        }
+
+        .card-qualificacao h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--hufflepuff-black);
+        }
+
+        /* SEÇÃO SERVIÇOS */
+        .servicos {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .card-servico {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition-smooth);
+        }
+
+        .card-servico:hover {
+            border-color: var(--hufflepuff-gold);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .card-servico h3 {
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+        }
+
+        .card-servico ul {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .card-servico li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            color: var(--text-muted);
+        }
+
+        .card-servico li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--hufflepuff-yellow-dark);
+            font-weight: bold;
+        }
+
+        /* SEÇÃO DIFERENCIAIS / DEPOIMENTOS */
+        .diferenciais {
+            padding: 80px 0;
+            background-color: var(--hufflepuff-black);
+            color: var(--white);
+        }
+
+        .diferenciais h2 {
+            color: var(--hufflepuff-gold);
+        }
+
+        .diferenciais p {
+            color: #CCCCCC;
+        }
+
+        .diferenciais-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .card-diferencial {
+            background-color: var(--hufflepuff-charcoal);
+            border: 1px solid #333333;
+            padding: 28px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .card-diferencial h3 {
+            color: var(--hufflepuff-gold);
+            margin-bottom: 12px;
+        }
+
+        /* FORMULÁRIO DE CONTATO */
+        .contato {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .form-container {
+            max-width: 680px;
+            margin: 0 auto;
+            background-color: var(--bg-light);
+            padding: 40px;
+            border-radius: 16px;
+            border: 2px solid var(--hufflepuff-gold);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--hufflepuff-black);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            background-color: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--hufflepuff-yellow-dark);
+            box-shadow: 0 0 0 3px rgba(237, 184, 45, 0.3);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--hufflepuff-black);
+            color: #888888;
+            padding: 40px 0;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: #CCCCCC;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-links a:hover {
+            color: var(--hufflepuff-gold);
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            nav ul {
+                gap: 16px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .form-container {
+                padding: 24px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================================================================== -->
+    <!-- GOOGLE TAG MANAGER (BODY SNIPPET / NOSCRIPT)                         -->
+    <!-- Cole o código noscript do GTM logo após a abertura da tag <body>:     -->
+    <!-- ==================================================================== -->
+    <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
+    <!-- ==================================================================== -->
+
+    <div class="house-stripe"></div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container header-content">
+            <a href="#hero" class="brand-logo" data-section="lp-tiago-moreira" data-type="link-logo" data-title="Logo Prof Tiago Moreira">
+                <!-- SVG Ícone do Texugo Lufa-Lufa / Hufflepuff -->
+                <svg class="badger-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="48" fill="#EDB82D" stroke="#1F1F1F" stroke-width="4"/>
+                    <path d="M30 35 L50 20 L70 35 L65 75 L35 75 Z" fill="#1F1F1F"/>
+                    <path d="M50 20 L50 75" stroke="#EDB82D" stroke-width="4"/>
+                    <path d="M38 45 Q50 35 62 45 Q50 65 38 45" fill="#FFFDF8"/>
+                    <circle cx="43" cy="48" r="2.5" fill="#1F1F1F"/>
+                    <circle cx="57" cy="48" r="2.5" fill="#1F1F1F"/>
+                </svg>
+                <div class="brand-title">
+                    Prof. Tiago Moreira
+                    <span>Física & Ensino Médio</span>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#sobre" data-section="lp-tiago-moreira" data-type="link-header" data-title="Navegação Sobre mim">Sobre</a></li>
+                    <li><a href="#servicos" data-section="lp-tiago-moreira" data-type="link-header" data-title="Navegação Serviços">Serviços</a></li>
+                    <li><a href="#diferenciais" data-section="lp-tiago-moreira" data-type="link-header" data-title="Navegação Metodologia">Metodologia</a></li>
+                    <li><a href="#contato" class="btn-primary" data-section="lp-tiago-moreira" data-type="botao-header" data-title="Botão Agendar Aula Header">Agendar Aula</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
+        <div class="container hero-grid">
+            <div>
+                <div class="hero-tag">
+                    ⚡ Paciência, Dedicação e Rigor Científico
+                </div>
+                <h1>Aprenda Física sem MISTÉRIOS com quem entende de APROVAÇÃO.</h1>
+                <p>Aulas particulares, acompanhamento personalizado e preparação focada no ENEM, Fuvest e vestibulares do país. Didática clara, acolhedora e adaptada às suas necessidades.</p>
+                <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                    <a href="#contato" class="btn-primary" data-section="hero" data-type="botao-hero" data-title="Botão Solicitar Orçamento Hero">Solicitar Orçamento</a>
+                    <a href="#sobre" class="btn-primary" style="background-color: transparent; border-color: var(--hufflepuff-black);" data-section="hero" data-type="botao-hero" data-title="Botão Conhecer Trajetória Hero">Conhecer Trajetória</a>
+                </div>
+            </div>
+            <div>
+                <div class="hero-badge-box">
+                    <svg class="badger-svg" viewBox="0 0 100 100" style="width: 80px; height: 80px; margin-bottom: 16px;">
+                        <circle cx="50" cy="50" r="48" fill="#EDB82D" stroke="#1F1F1F" stroke-width="4"/>
+                        <path d="M30 35 L50 20 L70 35 L65 75 L35 75 Z" fill="#1F1F1F"/>
+                        <path d="M50 20 L50 75" stroke="#EDB82D" stroke-width="4"/>
+                        <path d="M38 45 Q50 35 62 45 Q50 65 38 45" fill="#FFFDF8"/>
+                    </svg>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 8px;">Ensino Focado e Humano</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted);">"O trabalho árduo, a lealdade ao conhecimento e a paciência constroem o aprendizado definitivo."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO SOBRE -->
+    <section id="sobre" class="sobre">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trajetória Acadêmica & Profissional</h2>
+                <p>Formação sólida em uma das melhores universidades da América Latina aliada à experiência internacional e anos de prática em sistemas renomados de ensino.</p>
+            </div>
+            <div class="qualificacoes-grid">
+                <div class="card-qualificacao">
+                    <h3>Licenciatura em Física</h3>
+                    <p><strong>UNICAMP:</strong> Formação com base científica rigorosa e forte fundamentação na didática de ciências exatas.</p>
+                </div>
+                <div class="card-qualificacao">
+                    <h3>Experiência Internacional</h3>
+                    <p><strong>Universidade de Siegen (Alemanha):</strong> Intercâmbio acadêmico em Pedagogia com bolsa de estudos DAAD/UNICAMP.</p>
+                </div>
+                <div class="card-qualificacao">
+                    <h3>Especialização & Inclusão</h3>
+                    <p>Aperfeiçoamento focado em <strong>Design Educacional</strong> e <strong>Educação Inclusiva</strong>, garantindo planos de estudo adaptados a todos os perfis.</p>
+                </div>
+                <div class="card-qualificacao">
+                    <h3>5 Anos em Grandes Colégios</h3>
+                    <p>Atuação lecionando nos sistemas pré-vestibulares <strong>Anglo</strong> e <strong>Etapa</strong>, dominando as matrizes de provas de alto rendimento.</p>
+                </div>
+                <div class="card-qualificacao">
+                    <h3>Proficiência em Inglês</h3>
+                    <p>Certificação oficial <strong>Cambridge English (Level B2 - FCE)</strong>, permitindo consulta e uso de materiais internacionais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO SERVIÇOS -->
+    <section id="servicos" class="servicos">
+        <div class="container">
+            <div class="section-header">
+                <h2>Como Posso Te Ajudar?</h2>
+                <p>Serviços estruturados de acordo com o momento escolar do aluno.</p>
+            </div>
+            <div class="servicos-grid">
+                <div class="card-servico">
+                    <div>
+                        <h3>Aulas Particulares & Reforço</h3>
+                        <ul>
+                            <li>Resolução de dúvidas pontuais de Física</li>
+                            <li>Acompanhamento do currículo da escola</li>
+                            <li>Preparação para provas bimestrais e semanais</li>
+                        </ul>
+                    </div>
+                    <a href="#contato" class="btn-primary" data-section="servicos" data-type="botao-card" data-title="Botão Saber Mais Reforço">Saber Mais</a>
+                </div>
+                <div class="card-servico">
+                    <div>
+                        <h3>Preparatório ENEM & Vestibulares</h3>
+                        <ul>
+                            <li>Foco em Fuvest, Unicamp, Vunesp e ENEM</li>
+                            <li>Treino com questões dos sistemas Anglo/Etapa</li>
+                            <li>Estratégias de prova e gestão de tempo</li>
+                        </ul>
+                    </div>
+                    <a href="#contato" class="btn-primary" data-section="servicos" data-type="botao-card" data-title="Botão Saber Mais Vestibulares">Saber Mais</a>
+                </div>
+                <div class="card-servico">
+                    <div>
+                        <h3>Acompanhamento Inclusivo</h3>
+                        <ul>
+                            <li>Design pedagógico sob medida</li>
+                            <li>Respeito ao ritmo de aprendizagem do aluno</li>
+                            <li>Métodos visuais e práticos de raciocínio</li>
+                        </ul>
+                    </div>
+                    <a href="#contato" class="btn-primary" data-section="servicos" data-type="botao-card" data-title="Botão Saber Mais Inclusivo">Saber Mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DIFERENCIAIS -->
+    <section id="diferenciais" class="diferenciais">
+        <div class="container">
+            <div class="section-header">
+                <h2>Valores da Casa Aplicados à Física</h2>
+                <p>Assim como na Lufa-Lufa, acreditamos que a constância e o esforço superam qualquer obstáculo.</p>
+            </div>
+            <div class="diferenciais-grid">
+                <div class="card-diferencial">
+                    <h3>Paciência & Acolhimento</h3>
+                    <p>Nenhuma dúvida é irrelevante. O ambiente de aula é seguro para errar, testar e aprender.</p>
+                </div>
+                <div class="card-diferencial">
+                    <h3>Dedicação Constante</h3>
+                    <p>Construção semanal de hábitos de estudo duradouros, não apenas para a prova de amanhã.</p>
+                </div>
+                <div class="card-diferencial">
+                    <h3>Rigor & Clareza</h3>
+                    <p>Conceitos complexos desmistificados com exemplos do cotidiano e analogias didáticas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO DE CONTATO -->
+    <section id="contato" class="contato">
+        <div class="container">
+            <div class="section-header">
+                <h2>Agende uma Aula ou Tire suas Dúvidas</h2>
+                <p>Preencha os campos abaixo para alinhar os horários e objetivos de estudo.</p>
+            </div>
+            <div class="form-container">
+                <form id="lead-form" novalidate>
+                    <div class="form-group">
+                        <label for="nome">Nome Completo *</label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail de Contato *</label>
+                        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="serie">Série / Ano do Ensino Médio *</label>
+                        <select id="serie" name="serie" required>
+                            <option value="">Selecione...</option>
+                            <option value="1-ano">1º Ano do Ensino Médio</option>
+                            <option value="2-ano">2º Ano do Ensino Médio</option>
+                            <option value="3-ano">3º Ano do Ensino Médio / Cursinho</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="escola">Escola / Sistema de Ensino *</label>
+                        <input type="text" id="escola" name="escola" placeholder="Ex: Anglo, Etapa, Escola Pública..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Como posso ajudar? (Dúvida ou objetivo) *</label>
+                        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte um pouco sobre suas dificuldades com Física..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; border: none;" data-section="contato" data-type="submit-formulario" data-title="Enviar Formulario de Agendamento">Enviar Solicitação</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-content">
+            <div>
+                <p>&copy; 2026 Prof. Tiago Moreira - Todos os direitos reservados.</p>
+                <p style="font-size: 0.8rem; margin-top: 4px;">Inspirado na dedicação e lealdade da Casa Lufa-Lufa.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#sobre" data-section="footer" data-type="link-footer" data-title="Link Footer Sobre">Sobre</a>
+                <a href="#servicos" data-section="footer" data-type="link-footer" data-title="Link Footer Servicos">Serviços</a>
+                <a href="#contato" data-section="footer" data-type="link-footer" data-title="Link Footer Contato">Contato</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================================================================== -->
+    <!-- IMPLEMENTAÇÃO JAVASCRIPT - DATALAYER & SANITIZAÇÃO                  -->
+    <!-- ==================================================================== -->
+    <script>
+        // 1. Inicialização do window.dataLayer
+        window.dataLayer = window.dataLayer || [];
+
+        /**
+         * Função para sanitização estrita de strings.
+         * Regras:
+         * - Converter para caixa baixa (lowercase)
+         * - Remover acentos e caracteres especiais (NFD)
+         * - Substituir espaços por hífens (-)
+         * - Remover qualquer caractere que não seja letra, número ou hífen
+         */
+        function sanitizeText(text) {
+            if (!text) return '';
+            return text
+                .toString()
+                .toLowerCase()
+                .normalize('NFD') // Decompõe caracteres acentuados
+                .replace(/[\u0300-\u036f]/g, '') // Remove os diacríticos/acentos
+                .trim()
+                .replace(/\s+/g, '-') // Substitui espaços por hífen
+                .replace(/[^a-z0-9\-]/g, '') // Remove caracteres inválidos restantes
+                .replace(/\-+/g, '-'); // Impede hífens duplicados
+        }
+
+        /**
+         * Função unificada para disparar eventos de clique no dataLayer
+         */
+        function trackEvent(section, type, title) {
+            const sanitizedSection = sanitizeText(section);
+            const sanitizedType = sanitizeText(type);
+            const sanitizedTitle = sanitizeText(title);
+
+            const payload = {
+                'event': 'clique',
+                'custom_section': sanitizedSection,
+                'custom_type': sanitizedType,
+                'custom_title': sanitizedTitle
+            };
+
+            window.dataLayer.push(payload);
+            console.log('[DataLayer Push]', payload); // Log para fins de debug/desenvolvimento
+        }
+
+        // 2. Event Listener Global para Cliques em Links e Botões (Excluindo Submit de Form)
+        document.addEventListener('click', function (e) {
+            // Busca o elemento clicado ou o ancestral clicável mais próximo (a, button)
+            const target = e.target.closest('a, button');
+
+            if (!target) return;
+
+            // Se for o botão de submit do formulário, o tratamento será feito no evento 'submit'
+            if (target.getAttribute('type') === 'submit') return;
+
+            // Coleta informações dos atributos data-* ou gera padrões fallback
+            const section = target.getAttribute('data-section') || 'geral';
+            const type = target.getAttribute('data-type') || (target.tagName.toLowerCase() === 'a' ? 'link' : 'botao');
+            const title = target.getAttribute('data-title') || target.innerText || 'elemento-sem-titulo';
+
+            trackEvent(section, type, title);
+        });
+
+        // 3. Validação e Rastreamento de Submit do Formulário de Leads
+        const form = document.getElementById('lead-form');
+
+        if (form) {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault(); // Impede o envio padrão para demonstração
+
+                // Validação estrita de campos obrigatórios
+                const nome = document.getElementById('nome').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const serie = document.getElementById('serie').value;
+                const escola = document.getElementById('escola').value.trim();
+                const mensagem = document.getElementById('mensagem').value.trim();
+
+                // Caso algum campo obrigatório esteja vazio, interrompe sem disparar o dataLayer
+                if (!nome || !email || !serie || !escola || !mensagem) {
+                    alert('Por favor, preencha todos os campos obrigatórios antes de enviar.');
+                    return;
+                }
+
+                // Dispara o evento no dataLayer somente após a validação bem-sucedida
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const section = submitBtn.getAttribute('data-section') || 'contato';
+                const type = submitBtn.getAttribute('data-type') || 'submit-formulario';
+                const title = submitBtn.getAttribute('data-title') || 'envio-formulario-sucesso';
+
+                trackEvent(section, type, title);
+
+                // Feedback visual e reset do formulário
+                alert('Obrigado pelo contato! O Prof. Tiago Moreira retornará em breve.');
+                form.reset();
+            });
+        }
+    </script>
+</body>
+</html>
